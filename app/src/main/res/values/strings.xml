@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="hint">Your plans for %s</string>
+    <string name="previous_day_button_text">*previous day*</string>
+    <string name="save_button_text">Save</string>
+    <string name="next_day_text">*next day*</string>
+
+    <string-array name="days_of_the_week">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+</resources>
