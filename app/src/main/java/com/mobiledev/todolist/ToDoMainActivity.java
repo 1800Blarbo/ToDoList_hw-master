@@ -69,12 +69,7 @@ public class ToDoMainActivity extends AppCompatActivity implements View.OnClickL
             case R.id.activity_save_button:
                 plans[currentDay] = mInputEditText.getText().toString().trim();
                 Toast.makeText(getApplicationContext(), "saved", Toast.LENGTH_SHORT).show();
-                if (mInputEditText.getText().toString().equals("")) {
-                    mInputEditText.setHint("Your plans for " + getResources().getStringArray(R.array.days_of_the_week)[currentDay]);
-                } else {
-                    getPreferences(MODE_PRIVATE).edit().putString(currentDay + " ", plans[currentDay]).apply();
-                    Toast.makeText(getApplicationContext(), "saved", Toast.LENGTH_SHORT).show();
-                }
+                getPreferences(MODE_PRIVATE).edit().putString(currentDay + " ", plans[currentDay]).apply();
                 break;
 
             case R.id.activity_next_day_button:
@@ -100,9 +95,11 @@ public class ToDoMainActivity extends AppCompatActivity implements View.OnClickL
         } else {
             mInputEditText.setText(plans[currentDay]);
         }
-        if (getPreferences(MODE_PRIVATE).getString(currentDay + " ", plans[currentDay]) == null) {
+        if (getPreferences(MODE_PRIVATE).getString(currentDay + " ", plans[currentDay]).equals("")) {
+            System.out.println("jews" + currentDay);
             mInputEditText.setHint("Your plans for " + getResources().getStringArray(R.array.days_of_the_week)[currentDay]);
         } else {
+            System.out.println(currentDay);
             mInputEditText.setText(getPreferences(MODE_PRIVATE).getString(currentDay + " ", plans[currentDay]));
         }
     }
