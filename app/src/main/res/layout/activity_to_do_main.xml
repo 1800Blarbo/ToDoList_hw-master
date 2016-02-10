@@ -16,77 +16,79 @@
         <Spinner
             android:id="@+id/days_of_week"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-        />
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp" />
 
     </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/activity_main_current_day"
-        android:layout_below="@id/date_toolbar"
-        android:layout_alignParentEnd="true"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:textSize="22sp"
-        android:gravity="center"
-        />
-
-    <EditText
-        android:id="@+id/activity_main_edittext"
-        android:layout_below="@id/activity_main_current_day"
-        android:inputType="textAutoComplete|textCapSentences|textAutoCorrect"
-        android:hint="@string/edittext_hint"
-        android:layout_width="match_parent"
-        android:layout_height="390dp"
-        android:cursorVisible="true"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        />
 
     <LinearLayout
         android:id="@+id/activity_main_buttonbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        >
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp">
 
         <Button
             android:id="@+id/activity_previous_day_button"
-            android:text="@string/previous_day_button_text"
+            style="@android:style/Widget.Holo.Button.Borderless.Small"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            style="@android:style/Widget.Holo.Button.Borderless.Small"
-            />
+            android:text="@string/previous_day_button_text" />
 
 
         <Button
             android:id="@+id/activity_save_button"
-            android:text="@string/save_button_text"
+            style="@android:style/Widget.Holo.Button.Borderless.Small"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            style="@android:style/Widget.Holo.Button.Borderless.Small"
-            />
+            android:text="@string/save_button_text" />
 
         <Button
             android:id="@+id/activity_next_day_button"
-            android:text="@string/next_day_text"
+            style="@android:style/Widget.Holo.Button.Borderless.Small"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            style="@android:style/Widget.Holo.Button.Borderless.Small"
-            />
+            android:text="@string/next_day_text" />
 
     </LinearLayout>
 
 
+    <TextView
+        android:id="@+id/activity_main_current_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/date_toolbar"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"/>
+
+    <EditText
+        android:id="@+id/activity_main_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/activity_main_buttonbar"
+        android:layout_below="@id/activity_main_current_day"
+        android:layout_gravity="center_horizontal"
+        android:cursorVisible="true"
+        android:hint="@string/edittext_hint"
+        android:inputType="textAutoComplete|textCapSentences|textAutoCorrect"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:textSize="18sp" />
 
 </RelativeLayout>

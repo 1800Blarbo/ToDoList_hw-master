@@ -95,7 +95,8 @@ public class ToDoMainActivity extends AppCompatActivity implements View.OnClickL
         } else {
             mInputEditText.setText(plans[currentDay]);
         }
-        if (getPreferences(MODE_PRIVATE).getString(currentDay + " ", plans[currentDay]).equals("")) {
+        if (getPreferences(MODE_PRIVATE).getString(currentDay + " ", plans[currentDay])==null||getPreferences(MODE_PRIVATE).getString(currentDay + " ", plans[currentDay]).equals(""))
+        {
             mInputEditText.setHint("Your plans for " + getResources().getStringArray(R.array.days_of_the_week)[currentDay]);
         } else {
             mInputEditText.setText(getPreferences(MODE_PRIVATE).getString(currentDay + " ", plans[currentDay]));
